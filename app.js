@@ -1,19 +1,9 @@
-//              0       1
-let nomes = ["Vander", "Ana"];            
+async function imagemAPI(){
 
-function buscar() {
-    let nomeBusca =document.querySelector("#input").value;
-    for (let-i = 0; <nomes.length; i++) {
-        if (nomeBusca == nome[i]) {            
-            document.querySelector("#saida").textContent =
-            nomeBusca + " encontrado!";
-        }
-        
+    const retornoAPI = await fetch('https://dog.ceo/api/breeds/image/random');
+    const dadosAPI = await retornoAPI.json();
+    document.querySelector(".img-dog").src = dadosAPI.message;
+    console.log("retornoAPI");
+    
     }
-}
-
-
-
-
-
-
+    imagemAPI()
